@@ -14,6 +14,12 @@ const userSchema = new Schema(
       unique: true,
       match: [/.+@.+\..+/, 'Must match an email address!'],
     },
+    avatar: {
+      type: String,
+      required: true,
+      enum: ['avatar1', 'avatar2', 'avatar3'],
+      default: 'avatar1',
+    },
     posts: [
       {
         type: Schema.Types.ObjectId,

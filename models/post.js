@@ -1,20 +1,26 @@
 const { Schema, model } = require('mongoose');
-const commentSchema = require('./Comments');
+const commentSchema = require('./commentSchema');
 const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema(
   {
     postTitle: {
       type: String,
-      required: 'Post Title goes here',
+      required: true,
       minlength: 1,
       maxlength: 100
     },
     postText: {
       type: String,
-      required: 'Post text goes here',
+      required: true,
       minlength: 1,
       maxlength: 280
+    },
+    posttag: {
+      type: String,
+      required: true,
+      enum: ['tag1', 'tag2', 'tag3'],
+      default: 'tag1',
     },
     createdAt: {
       type: Date,
@@ -35,7 +41,7 @@ const postSchema = new Schema(
   }
 );
 
-commentSchema.virtual('commentCount').get(function() {
+postSchema.virtual('commentCount').get(function() {
   return this.comments.length;
 });
 
