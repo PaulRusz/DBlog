@@ -20,7 +20,7 @@ function Blog() {
     // Creates a new blog post object
     const newPost = {
       id: blogPosts.length + 1,
-      title: new PostTitle(),
+      title: new newPostTitle(),
       content: newPostContent,
     };
 

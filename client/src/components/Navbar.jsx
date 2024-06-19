@@ -2,16 +2,16 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 
-function Navbar() {
+const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
     <nav className="nav">
-      <div className="navBrand">
+      <div className="nav-brand">
         <Link to="/">DBlog</Link>
       </div>
 
-      <button className="hamburgerMenu" onClick={() => setShowMenu(!showMenu)}>
+      <button className="hamburger-menu" onClick={() => setShowMenu(!showMenu)}>
         &#9776;
       </button>
 
@@ -39,6 +39,6 @@ function Navbar() {
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
