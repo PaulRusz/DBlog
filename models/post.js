@@ -1,14 +1,26 @@
 const { Schema, model } = require('mongoose');
-const reactionSchema = require('./Reaction');
+const commentSchema = require('./commentSchema');
 const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema(
   {
+    postTitle: {
+      type: String,
+      required: true,
+      minlength: 1,
+      maxlength: 100
+    },
     postText: {
       type: String,
-      required: 'Post text goes here',
+      required: true,
       minlength: 1,
       maxlength: 280
+    },
+    posttag: {
+      type: String,
+      required: true,
+      enum: ['tag1', 'tag2', 'tag3'],
+      default: 'tag1',
     },
     createdAt: {
       type: Date,
@@ -19,7 +31,7 @@ const postSchema = new Schema(
       type: String,
       required: true
     },
-    reactions: [commentSchema]
+    comments: [commentSchema]
   },
   {
     toJSON: {
@@ -29,10 +41,10 @@ const postSchema = new Schema(
   }
 );
 
-thoughtSchema.virtual('commentCount').get(function() {
+postSchema.virtual('commentCount').get(function() {
   return this.comments.length;
 });
 
-const Post = model('Post', postSchemaSchema);
+const Post = model('Post', postSchema);
 
 module.exports = Post;
