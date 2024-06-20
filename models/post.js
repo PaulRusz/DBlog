@@ -22,6 +22,9 @@ const postSchema = new Schema(
       enum: ['tag1', 'tag2', 'tag3'],
       default: 'tag1',
     },
+    postImage: {
+      type: String, // Store the path to the uploaded image for the post
+    },
     createdAt: {
       type: Date,
       default: Date.now,
@@ -46,5 +49,4 @@ postSchema.virtual('commentCount').get(function() {
 });
 
 const Post = model('Post', postSchema);
-
 module.exports = Post;

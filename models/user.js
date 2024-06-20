@@ -20,6 +20,9 @@ const userSchema = new Schema(
       enum: ['avatar1', 'avatar2', 'avatar3'],
       default: 'avatar1',
     },
+    userimage: {
+      type: String, // Store the path to the uploaded image
+    },
     posts: [
       {
         type: Schema.Types.ObjectId,
@@ -46,5 +49,4 @@ userSchema.virtual('friendCount').get(function () {
 });
 
 const User = model('User', userSchema);
-
 module.exports = User;
