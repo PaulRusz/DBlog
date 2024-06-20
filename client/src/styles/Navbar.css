@@ -7,13 +7,13 @@
     padding: 1rem;
   }
   
-  .nav-brand a {
+  .navBrand a {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
   }
   
-  .hamburger-menu {
+  .hamburgerMenu {
     display: none;
     cursor: pointer;
   }
