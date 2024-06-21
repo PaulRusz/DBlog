@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
+import SearchFriends from "./SearchFriends";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -35,6 +36,7 @@ function Navbar() {
           <Link to="/logout" className="links">
             Logout
           </Link>
+          <SearchFriends />
         </ul>
       </div>
     </nav>

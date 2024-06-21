@@ -21,18 +21,9 @@ const FriendsPage = () => {
         <h1>Friends Page</h1>
       </div>
       <div className="container">
-        <div className="friend-card">
-          <h2 className="friend-name">John Doe</h2>
-          <p className="friend-details">Age: 25</p>
-        </div>
-        <div className="friend-card">
-          <h2 className="friend-name">Jane Smith</h2>
-          <p className="friend-details">Age: 30</p>
-        </div>
-        <div className="friend-card">
-          <h2 className="friend-name">Alice Johnson</h2>
-          <p className="friend-details">Age: 28</p>
-        </div>
+        {friendsData.map((friend) => (
+          <Friend key={friend.id} friend={friend} />
+        ))}
       </div>
     </div>
   );
