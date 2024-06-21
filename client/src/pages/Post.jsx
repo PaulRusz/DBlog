@@ -1,8 +1,8 @@
-import "..styles/Blog.css";
+import "../styles/Post.css";
 import { useState } from "react";
 
-function Blog() {
-  const [blogPosts, setBlogPosts] = useState([]);
+function NewPost() {
+  const [posts, setPosts] = useState([]);
   const [newPostTitle, setNewPostTitle] = useState("");
   const [newPostContent, setNewPostContent] = useState("");
 
@@ -17,15 +17,15 @@ function Blog() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Creates a new blog post object
+    // Create a new post object
     const newPost = {
-      id: blogPosts.length + 1,
-      title: new PostTitle(),
+      id: posts.length + 1,
+      title: newPostTitle,
       content: newPostContent,
     };
 
-    // Updates the blogPosts state with the new post
-    setBlogPosts([...blogPosts, newPost]);
+    // Update the posts state with the new post
+    setPosts([...posts, newPost]);
 
     // Clear the input fields after submission
     setNewPostTitle("");
@@ -33,14 +33,14 @@ function Blog() {
   };
 
   return (
-    <div className="blogContainer">
-      <div className="blogHeader">
-        <h1>My Blogs</h1>
-        <p>Checkout my blogs below</p>
+    <div className="postContainer">
+      <div className="postHeader">
+        <h1>My Posts</h1>
+        <p>Checkout my posts below</p>
       </div>
 
       <div className="newPostContainer">
-        <h2>Create a New Blog Post</h2>
+        <h2>Create a New Post</h2>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -59,8 +59,8 @@ function Blog() {
         </form>
       </div>
 
-      {blogPosts.map((post) => (
-        <div key={post.id} className="blogPost">
+      {posts.map((post) => (
+        <div key={post.id} className="post">
           <h2>{post.title}</h2>
           <p>{post.content}</p>
         </div>
@@ -69,4 +69,4 @@ function Blog() {
   );
 }
 
-export default Blog;
+export default NewPost;
