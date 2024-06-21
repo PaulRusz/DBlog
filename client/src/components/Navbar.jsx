@@ -23,8 +23,8 @@ function Navbar() {
           <Link to="/profile" className="links">
             Profile
           </Link>
-          <Link to="/blog" className="links">
-            Blog
+          <Link to="/post" className="links">
+            Post
           </Link>
           <Link to="/friends" className="links">
             Friends
