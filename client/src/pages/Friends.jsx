@@ -1,8 +1,6 @@
-
-
 import react from "react";
 import { useState, useEffect } from "react";
-import "../styles/Friends.css";
+import "../Styles/Friends.css";
 
 const FriendsPage = () => {
   const [friends, setFriends] = useState([]);

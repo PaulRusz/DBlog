@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/Navbar.css";
+import "../Styles/Navbar.css";
 import SearchFriends from "./SearchFriends";
 
 

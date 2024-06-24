@@ -9,4 +9,4 @@ const app = express();
 app.use(express.json());
 
 // Connect to MongoDB database
-const db = require('./config/connection');
+// const db = require('./Config/Connection');
