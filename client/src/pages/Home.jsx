@@ -1,6 +1,6 @@
-import "../styles/Home.css";
-import Navbar from "../components/Navbar";
-import HomePageCarousel from "../components/Homepage-Carousel";
+import "../Styles/Home.css";
+import Navbar from "../Components/Navbar";
+import HomePageCarousel from "../Components/HomepageCarousel";
 
 const Home = () => {
   return (

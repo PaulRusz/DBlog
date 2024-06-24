@@ -1,3 +1,5 @@
+
+
 import react from "react";
 import { useState, useEffect } from "react";
 import "../styles/Friends.css";
@@ -25,7 +27,7 @@ const FriendsPage = () => {
 
   return (
     <div>
-      <div className="header2">
+      <div className='header2'>
         <h1>Friends Page</h1>
       </div>
 

@@ -1,22 +1,24 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 import SearchFriends from "./SearchFriends";
 
+
 function Navbar() {
-  const [showMenu, setShowMenu] = useState(false);
+  const [ShowMenu, SetShowMenu] = useState(false);
 
   return (
-    <nav className="nav">
-      <div className="navBrand">
-        <Link to="/">DBlog</Link>
+    <nav className='Nav'>
+      <div className='NavBrand'>
+        <Link to='/'>DBlog</Link>
       </div>
 
-      <button className="hamburgerMenu" onClick={() => setShowMenu(!showMenu)}>
+      <button className='HamburgerMenu' onClick={() => SetShowMenu(!ShowMenu)}>
         &#9776;
       </button>
 
-      <div className={`links ${showMenu ? "show" : ""}`}>
+      <div className={`Links ${ShowMenu ? 'Show' : ''}`}>
         <ul>
           <li>
             <Link to="/" className="links">

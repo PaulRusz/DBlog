@@ -1,16 +1,16 @@
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import App from "./App.jsx";
-import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
-import Profile from "./pages/Profile";
-import Post from "./pages/Post";
-import Friends from "./pages/Friends";
+import App from './App.jsx';
+import Home from './Pages/Home.jsx';
+import NotFound from './Pages/NotFound.jsx';
+import Profile from './Pages/Profile.jsx';
+import Post from './Pages/Post.jsx';
+import Friends from './Pages/Friends.jsx';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     errorElement: <NotFound />,
     children: [
@@ -19,21 +19,21 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/profile",
+        path: '/Profile',
         element: <Profile />,
       },
       {
-        path: "/post",
+        path: '/Post',
         element: <Post />,
       },
       {
-        path: "/friends",
+        path: '/Friends',
         element: <Friends />,
       },
     ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <RouterProvider router={router} />
 );

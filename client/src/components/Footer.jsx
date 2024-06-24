@@ -1,11 +1,10 @@
-import "../styles/Footer.css";
+import '../Styles/Footer.css';
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className='Footer'>
       <p>
-        &copy; 2024 - Paul Ruszkay, Emily Simone, Rahul Sharma, & Yamil
-        Hernandez
+        &copy; 2024 - Paul Ruszkay, Emily Simone, Rahul Sharma, & Yamil Hernandez
       </p>
     </footer>
   );
