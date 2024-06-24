@@ -15,7 +15,7 @@ function Profile() {
       </div>
 
       <div className="blogContainer">
-        <h2>My Blog Posts</h2>
+        <h2>My Posts</h2>
         <ul>{/* posts will go here */}</ul>
       </div>
 
