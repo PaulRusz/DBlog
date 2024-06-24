@@ -1,39 +1,42 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import "../styles/Navbar.css";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import '../Styles/Navbar.css';
 
 function Navbar() {
-  const [showMenu, setShowMenu] = useState(false);
+  const [ShowMenu, SetShowMenu] = useState(false);
 
   return (
-    <nav className="nav">
-      <div className="navBrand">
-        <Link to="/">DBlog</Link>
+    <nav className='Nav'>
+      <div className='NavBrand'>
+        <Link to='/'>DBlog</Link>
       </div>
 
-      <button className="hamburgerMenu" onClick={() => setShowMenu(!showMenu)}>
+      <button className='HamburgerMenu' onClick={() => SetShowMenu(!ShowMenu)}>
         &#9776;
       </button>
 
-      <div className={`links ${showMenu ? "show" : ""}`}>
+      <div className={`Links ${ShowMenu ? 'Show' : ''}`}>
         <ul>
-          <Link to="/" className="links">
+          <Link to='/' className='Links'>
             Home
           </Link>
-          <Link to="/profile" className="links">
+          <Link to='/Profile' className='Links'>
             Profile
           </Link>
-          <Link to="/post" className="links">
+          <Link to='/Post' className='Links'>
             Post
           </Link>
-          <Link to="/friends" className="links">
+          <Link to='/Friends' className='Links'>
             Friends
           </Link>
-          <Link to="/login" className="login">
+          <Link to='/Login' className='login'>
             Login
           </Link>
-          <Link to="/logout" className="links">
+          <Link to='/Logout' className='Links'>
             Logout
+          </Link>
+          <Link to='/SignUp' className='Links'>
+            Create An Account
           </Link>
         </ul>
       </div>

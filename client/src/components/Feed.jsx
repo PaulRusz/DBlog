@@ -1,29 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import BlogPost from './BlogPost';
 
 const Feed = () => {
-  const [posts, setPosts] = useState([]);
+  const [Posts, SetPosts] = useState([]);
 
   useEffect(() => {
-    // Fetch data from an API 
-    const fetchPosts = async () => {
-      const response = await fetch('https://api.example.com/posts'); // Replace with API...
-      const data = await response.json();
-      setPosts(data);
+    // Fetch Data From API 
+    const FetchPosts = async () => {
+      const Response = await fetch('https://api.example.com/posts'); // Replace with API...
+      const Data = await Response.json();
+      SetPosts(Data);
     };
 
-    fetchPosts();
+    FetchPosts();
   }, []);
 
   return (
-    <div className="feed">
-      {posts.map(post => (
+    <div className='Feed'>
+      {Posts.map(Post => (
         <BlogPost
-          key={post.id}
-          title={post.title}
-          author={post.author}
-          content={post.content}
-          date={post.date}
+          key={Post.id}
+          Title={Post.title}
+          Author={Post.author}
+          Content={Post.content}
+          Date={Post.date}
         />
       ))}
     </div>

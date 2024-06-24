@@ -1,10 +1,10 @@
-import "../styles/Post.css";
-import { useState } from "react";
+import '../Styles/Post.css';
+import { useState } from 'react';
 
 function NewPost() {
   const [posts, setPosts] = useState([]);
-  const [newPostTitle, setNewPostTitle] = useState("");
-  const [newPostContent, setNewPostContent] = useState("");
+  const [newPostTitle, setNewPostTitle] = useState('');
+  const [newPostContent, setNewPostContent] = useState('');
 
   const handleTitleChange = (e) => {
     setNewPostTitle(e.target.value);
@@ -28,39 +28,39 @@ function NewPost() {
     setPosts([...posts, newPost]);
 
     // Clear the input fields after submission
-    setNewPostTitle("");
-    setNewPostContent("");
+    setNewPostTitle('');
+    setNewPostContent('');
   };
 
   return (
-    <div className="postContainer">
-      <div className="postHeader">
+    <div className='postContainer'>
+      <div className='postHeader'>
         <h1>My Posts</h1>
         <p>Checkout my posts below</p>
       </div>
 
-      <div className="newPostContainer">
+      <div className='newPostContainer'>
         <h2>Create a New Post</h2>
         <form onSubmit={handleSubmit}>
           <input
-            type="text"
-            placeholder="Enter Title"
+            type='text'
+            placeholder='Enter Title'
             value={newPostTitle}
             onChange={handleTitleChange}
           />
 
           <textarea
-            placeholder="Enter Content"
+            placeholder='Enter Content'
             value={newPostContent}
             onChange={handleContentChange}
           ></textarea>
 
-          <button type="submit">Submit</button>
+          <button type='submit'>Submit</button>
         </form>
       </div>
 
       {posts.map((post) => (
-        <div key={post.id} className="post">
+        <div key={post.id} className='post'>
           <h2>{post.title}</h2>
           <p>{post.content}</p>
         </div>

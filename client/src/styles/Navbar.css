@@ -1,59 +1,59 @@
-.nav {
+.Nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid white;
     color: white;
     padding: 1rem;
+}
+
+.NavBrand A {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.HamburgerMenu {
+  display: none;
+  cursor: pointer;
+}
+
+.Links {
+  display: flex;
+  list-style: none;
+}
+
+.Links A {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.Links A:Hover {
+  background-color: #555;
+}
+
+.Show {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .HamburgerMenu {
+    display: block;
   }
-  
-  .navBrand a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-  }
-  
-  .hamburgerMenu {
+
+  .Links {
     display: none;
-    cursor: pointer;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    width: 100%;
   }
-  
-  .links {
-    display: flex;
-    list-style: none;
+
+  .Links A {
+    padding: 1rem;
+    border-bottom: 1px solid white;
   }
-  
-  .links a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-  }
-  
-  .links a:hover {
-    background-color: #555;
-  }
-  
-  .show {
-    display: flex;
-  }
-  
-  @media (max-width: 768px) {
-    .hamburger-menu {
-      display: block;
-    }
-  
-    .links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #333;
-      width: 100%;
-    }
-  
-    .links a {
-      padding: 1rem;
-      border-bottom: 1px solid white;
-    }
-  }
+}
