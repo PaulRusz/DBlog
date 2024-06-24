@@ -6,6 +6,7 @@ const CommentSchema = new Schema(
     CommentId: {
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId(),
+      required: true,
     },
     CommentBody: {
       type: String,

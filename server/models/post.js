@@ -1,40 +1,40 @@
 const { Schema, model } = require('mongoose');
-const commentSchema = require('./commentSchema');
-const dateFormat = require('../utils/dateFormat');
+const CommentSchema = require('./Comment');
+const DateFormat = require('../Utils/DateFormat');
 
-const postSchema = new Schema(
+const PostSchema = new Schema(
   {
-    postTitle: {
+    PostTitle: {
       type: String,
       required: true,
       minlength: 1,
       maxlength: 100,
     },
-    postText: {
+    PostText: {
       type: String,
       required: true,
       minlength: 1,
       maxlength: 300,
     },
-    posttag: {
+    PostTag: {
       type: String,
       required: true,
-      enum: ['tag1', 'tag2', 'tag3'],
-      default: 'tag1',
+      enum: ['Tag1', 'Tag2', 'Tag3'],
+      default: 'Tag1',
     },
-    postImage: {
-      type: String, // Store the path to the uploaded image for the post
+    PostImage: {
+      type: String, // Store The Path To The Uploaded Image For The Post
     },
-    createdAt: {
+    CreatedAt: {
       type: Date,
       default: Date.now,
-      get: timestamp => dateFormat(timestamp)
+      get: Timestamp => DateFormat(Timestamp)
     },
-    username: {
+    Username: {
       type: String,
       required: true
     },
-    comments: [commentSchema]
+    Comments: [CommentSchema]
   },
   {
     toJSON: {
@@ -44,10 +44,10 @@ const postSchema = new Schema(
   }
 );
 
-postSchema.virtual('commentCount').get(function() {
+PostSchema.virtual('CommentCount').get(function() {
   return this.comments.length;
 });
 
-const Post = model('Post', postSchema);
+const Post = model('Post', PostSchema);
 
 module.exports = Post;
