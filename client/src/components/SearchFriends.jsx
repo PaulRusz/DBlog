@@ -22,7 +22,12 @@ const SearchFriends = () => {
 
   return (
     <div>
-      <input type="text" value={searchQuery} onChange={handleInputChange} />
+      <input
+        type="text"
+        placeholder="Search for Friends"
+        value={searchQuery}
+        onChange={handleInputChange}
+      />
       <button onClick={handleSearch}>Search</button>
       <ul>
         {searchResults.map((friend) => (

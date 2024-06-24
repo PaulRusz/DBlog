@@ -18,25 +18,37 @@ function Navbar() {
 
       <div className={`links ${showMenu ? "show" : ""}`}>
         <ul>
-          <Link to="/" className="links">
-            Home
-          </Link>
-          <Link to="/profile" className="links">
-            Profile
-          </Link>
-          <Link to="/post" className="links">
-            Post
-          </Link>
-          <Link to="/friends" className="links">
-            Friends
-          </Link>
-          <Link to="/login" className="login">
-            Login
-          </Link>
-          <Link to="/logout" className="links">
-            Logout
-          </Link>
-          <SearchFriends />
+          <li>
+            <Link to="/" className="links">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/profile" className="links">
+              Profile
+            </Link>
+          </li>
+          <li>
+            <Link to="/post" className="links">
+              Post
+            </Link>
+          </li>
+          <li>
+            <Link to="/friends" className="links">
+              Friends
+            </Link>
+          </li>
+          <li>
+            <Link to="/login" className="login">
+              Login
+            </Link>
+          </li>
+          <li>
+            <Link to="/logout" className="links">
+              Logout
+            </Link>
+          </li>
+          <SearchFriends className="searchFriends" />
         </ul>
       </div>
     </nav>
