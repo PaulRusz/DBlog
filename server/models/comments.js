@@ -31,5 +31,7 @@ const commentSchema = new Schema(
   }
 );
 
-module.exports = commentSchema;
+const Comments = model('comments', commentSchema);
+
+module.exports = Comments;
 
