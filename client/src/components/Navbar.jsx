@@ -1,6 +1,9 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../Styles/Navbar.css';
+
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import "../styles/Navbar.css";
+import SearchFriends from "./SearchFriends";
+
 
 function Navbar() {
   const [ShowMenu, SetShowMenu] = useState(false);
@@ -17,27 +20,37 @@ function Navbar() {
 
       <div className={`Links ${ShowMenu ? 'Show' : ''}`}>
         <ul>
-          <Link to='/' className='Links'>
-            Home
-          </Link>
-          <Link to='/Profile' className='Links'>
-            Profile
-          </Link>
-          <Link to='/Post' className='Links'>
-            Post
-          </Link>
-          <Link to='/Friends' className='Links'>
-            Friends
-          </Link>
-          <Link to='/Login' className='login'>
-            Login
-          </Link>
-          <Link to='/Logout' className='Links'>
-            Logout
-          </Link>
-          <Link to='/SignUp' className='Links'>
-            Create An Account
-          </Link>
+          <li>
+            <Link to="/" className="links">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/profile" className="links">
+              Profile
+            </Link>
+          </li>
+          <li>
+            <Link to="/post" className="links">
+              Post
+            </Link>
+          </li>
+          <li>
+            <Link to="/friends" className="links">
+              Friends
+            </Link>
+          </li>
+          <li>
+            <Link to="/login" className="login">
+              Login
+            </Link>
+          </li>
+          <li>
+            <Link to="/logout" className="links">
+              Logout
+            </Link>
+          </li>
+          <SearchFriends className="searchFriends" />
         </ul>
       </div>
     </nav>
